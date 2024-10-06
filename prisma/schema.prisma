@@ -1,0 +1,30 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Variável de ambiente para a URL do DB
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Usuario {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  senha        String
+  tipoUsuario  TipoUsuario
+  agendamentos Agendamento[] // Um usuário pode ter vários agendamentos
+}
+
+model Agendamento {
+  id            Int      @id @default(autoincrement())
+  data          DateTime
+  descricao     String
+  usuarioId     Int
+  usuario       Usuario   @relation(fields: [usuarioId], references: [id])
+}
+
+enum TipoUsuario {
+  CLIENTE
+  OFICINA
+}

@@ -1,0 +1,25 @@
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+  }
+  
+  .title {
+    margin-bottom: 8px;
+  }
+  
+  .description {
+    color: gray;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Aumenta o espaçamento entre os cards */
+    flex-wrap: wrap; /* Garante que os cards quebrem linha quando necessário */
+    margin: 0 auto; /* Centraliza o container */
+  }
+  
+  
