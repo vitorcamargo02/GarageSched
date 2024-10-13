@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card } from '../components/card/card';
 
 interface Veiculo {
   id: number;
@@ -86,7 +85,7 @@ const ClientePage = () => {
                     <td className="py-2">{veiculo.placa}</td>
                     <td className="py-2">
                       <button
-                        className="bg-red -600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                        className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                         onClick={() => handleExcluirVeiculo(veiculo.id)}
                       >
                         Excluir
@@ -102,7 +101,7 @@ const ClientePage = () => {
           <div className="bg-white p-4 rounded shadow">
             <h2 className="text-2xl font-bold mb-4">Histórico</h2>
             <button
-              className="bg-orange-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleShowHistorico}
             >
               {showHistorico ? 'Esconder Histórico' : 'Mostrar Histórico'}
@@ -142,6 +141,7 @@ const ClientePage = () => {
               </div>
             )}
           </div>
+
           {/* Buscar Oficinas */}
           <div className="bg-white p-4 rounded shadow">
             <h2 className="text-2xl font-bold mb-4">Buscar Oficinas</h2>
@@ -154,30 +154,31 @@ const ClientePage = () => {
               />
               <button
                 type="submit"
-                className="bg-orange-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
               >
                 Buscar
               </button>
             </form>
           </div>
+
+          {/* Informações sobre o cliente */}
           <div className="bg-white p-4 rounded shadow">
             <h2 className="text-2xl font-bold mb-4">Informações sobre você</h2>
             <div className="flex items-center mb-4">
-              <img src="https://picsum.photos/200/400" alt="Oficina" className="w-20 h-20 rounded-full mr-4" />
+              <img src="https://picsum.photos/200/400" alt="Cliente" className="w-20 h-20 rounded-full mr-4" />
               <div>
                 <h4 className="text-lg font-bold">Cliente XYZ</h4>
                 <p>Endereço: Rua ABC, 123 - Centro</p>
                 <p>CPF / CNPJ: 000.000.000.00</p>
                 <button
-                        className="bg-orange-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                      >
-                        Editar
-                      </button>
+                  className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Editar
+                </button>
               </div>
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
